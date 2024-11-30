@@ -111,7 +111,7 @@ h3{
     font-size: var(--h3-size);
 }
 
-/******************************* professor's nav styling ***********************************/
+/*********** professor's nav styling ************/
 nav {
     grid-area: nav;
     min-width: 414px;
@@ -134,7 +134,7 @@ nav ul {
 nav li img {
     display: none;
 }
-/* *****************this controls dropdown text */
+/*this controls dropdown text */
 nav li a {
     display: block;
     padding: 20px;
@@ -142,7 +142,23 @@ nav li a {
     font-size: var(--nav-a);
     color: var(--orange-red);
     text-align: center;
+    z-index: 6;
+    transition: all .5s ease-out;
 }
+
+/* hover for dropdown li's */
+nav li:hover{
+    background-color: var(--orange-red);
+    color: white;
+    transition: all .5s ease-out;
+}
+
+nav li:hover a{
+    background-color: var(--orange-red);
+    color: white;
+    transition: all .5s ease-out;
+}
+
 nav label {
     cursor: pointer;
     display: inline-block;
@@ -151,7 +167,7 @@ nav label {
     bottom: 5px;
     left: 30px;
 }
-/*****************this is span text organization */
+/* this is span text organization */
 nav span {
     display: block;
     position: relative;
@@ -180,7 +196,7 @@ nav h2 {
     width: 1px;
 }
 
-/********************************************************************************/
+/*****************************/
 
 .nav-form{
     grid-row: 1/-1;
@@ -211,10 +227,21 @@ nav h2 {
     text-align: center;
     padding-top: 15px;
     padding-bottom: 25px;
+    transition: all .25s ease-out;
 }
 
 #sign-in > svg{
     transform: scale(1.2);
+}
+
+/* sign-in hover effect */
+#sign-in:hover{
+    background-color: var(--orange-red);
+    right: 0px;
+    padding: 15px 27px 31px 22px;
+}
+#sign-in:hover > svg{
+    stroke: var(--white);
 }
 
 #sign-in > span{
@@ -249,7 +276,6 @@ button > svg{
     margin: 0;
     background-color: var(--orange-red);
 }
-/* **********************************MENU TEXT STYLING TO DO:***************************************** */
 
 header{
     background-color: var(--white);
@@ -261,6 +287,7 @@ h1{
     text-align: center;
     margin: 1rem 0 1.5rem; 
 }
+/* MENU TEXT STYLING */
 
 header menu{
     display: flex;
@@ -280,6 +307,18 @@ header menu li a{
     font-family: var(--header);
     font-size: var(--menu-li);
     color: var(--orange-red);
+    transition: all .5s ease-out;
+}
+
+/* header menu hover styling */
+header menu li a:hover{
+    background: linear-gradient(to top, var(--orange-red) 40%, transparent 60%);
+    color: var(--white);
+}
+
+header menu li a:hover svg{
+    background-color: var(--white);
+    width: 100%; 
 }
 
 header img{
@@ -290,7 +329,7 @@ header p{
     width: 95%;
     margin: 1rem auto 1.5rem;
 }
-
+/* *************************************** */
 main{
     background-color: var(--white);
 }
@@ -362,6 +401,13 @@ aside h2{
     "image dish-description"
     "image dish-rating";
     margin-bottom: 1rem;
+    transition: all .5s ease-out;
+}
+
+/* dishes hover stylings */
+.dishes:hover{
+    background-color: rgb(255, 179, 3); 
+    transition: all .5s ease-out;   
 }
 
 .dishes h3{
@@ -441,6 +487,18 @@ footer menu li a{
     font-family: var(--header);
     font-size: var(--menu-li);
     color: var(--orange-red);
+    transition: all .5s ease-out;
+}
+
+/* footer menu li hover stylings */
+footer menu li a:hover{
+    background: linear-gradient(to top, var(--orange-red) 40%, transparent 60%);
+    color: var(--white);
+}
+
+footer menu li a:hover svg{
+    background-color: var(--white);
+    width: 100%; 
 }
 
 footer section:nth-of-type(2){
@@ -473,7 +531,7 @@ footer p{
     margin: 0;
     line-height: 1;
 }
-/*-------------------- MEDIA QUERY (medium 768px) --------------------------------*/
+/*-------------------- MEDIA QUERY (medium 768px) -------------------*/
 @media (min-width: 768px){
     body{
         width: 768px;
@@ -495,88 +553,40 @@ footer p{
         padding: 0;
         z-index: 6;
     }
-/**********prof's write up(look through and mod/delete unneeded)******** */
-/* ***************************************************************************** */
-nav{
-    grid-area: nav;
-    min-width: 100%;
-    background-color: #ffffff;
-    box-shadow: 0px 3px 3px #bbb;
-    position: relative;
-    padding-top: 0px;
-    z-index:5;
-    font-family: var(--header);
-    padding-bottom: 1rem;
-}
-nav ul {
-    grid-area: hamburger;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    overflow: visible;
-    display: flex;
-    max-height: 0;
-    width: 100%;
-    position: relative;
-    top: -72px;
-}
-nav li img {
-    display: block;
-    width: 69.37px;
-}
-/***this controls dropdown text */
-nav li a {
-    display: block;
-    padding: 20px;
-    text-decoration: none;
-    font-size: var(--nav-a);
-    color: var(--orange-red);
-    text-align: center;
-}
-nav label {
-    cursor: pointer;
-    /* display: none; */
-    user-select: none;
-    position: relative;
-    bottom: 5px;
-    left: 30px;
-}
-/***this is span text organization */
-nav span {
-    display: block;
-    position: relative;
-    font-size: var(--nav-span);
-    color: var(--black);
+/* *********nav changes******** */
+    nav{
+        grid-area: nav;
+        min-width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0px 3px 3px #bbb;
+        position: relative;
+        padding-top: 0px;
+        z-index:5;
+        font-family: var(--header);
+        padding-bottom: 1rem;
+    }
+    nav ul {
+        grid-area: hamburger;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: visible;
+        display: flex;
+        max-height: 0;
+        width: 100%;
+        position: relative;
+        top: -72px;
+    }
+    nav li img {
+        display: block;
+        width: 69.37px;
+    }
 
- }
-nav label svg {
-    display: block;
-}
-/* **********new to hide menu ************ */
-nav label span {
-    visibility: hidden;
-}
-
-label span:before, label span:after {
-    content: '';
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
-}
-nav input {
-    display: none;
-}
-nav input:checked ~ ul {
-    max-height: 550px;
-}
-nav h2 {
-    visibility: hidden;
-    height: 1px;
-    width: 1px;
-}
-
-/********************************************************************************/
+/* **********(new) to hide menu ************ */
+    nav label span {
+        visibility: hidden;
+    }
+/******************************************/
     #logo{
         grid-area: logo;
         background-color:var(--orange-red);
@@ -595,7 +605,6 @@ nav h2 {
 
     #sign-in{
         top:-100px;
-        right: 10px;
     }
 
     form {
@@ -695,6 +704,230 @@ nav h2 {
         grid-row: 1/2;
         padding: 3rem 0;
     }
+    
+/* hover for nav menu-items img a */
+nav li a:hover{
+    background-color: var(--orange-red);
+    color: white;
+    padding-bottom: 10px;
+}
+
+nav #logo:hover{
+    padding-bottom: 20px;
+}
+
+/* header menu hover styling */
+header menu li a:hover{
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 56%, var(--orange-red) 20%);
+    color: var(--white);
+}
+
+header menu li a:hover svg{
+    background-color: transparent;
+    width: 100%; 
+}
 
 }
 /*-------------------- MEDIA QUERY (large 1280px) ------------------------------------*/
+@media (min-width: 1280px){
+    body{
+        width: 1280px;
+        margin: 0 auto;
+        grid-template-columns: 1280px;
+    }
+
+    .nav-form{
+        display: block; 
+        width: 1280px;
+        position: relative;
+    }
+
+    nav{
+        position: fixed;  
+        min-width: 0%; 
+        padding-bottom: 60px;  
+    }
+
+    nav ul{
+       justify-content: center; 
+       width: 1280px;  
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        margin: 12rem 0 0;
+    }
+
+    input[type="search"] {
+        width: 21%;
+    }
+
+    #logo{
+        top: 0px;
+        height: 92px;     
+    }
+
+    #logo svg{
+        transform: scale(1.2);
+    }
+
+    #sign-in{
+        top:15px;
+    }
+
+    header{
+        display: grid;
+        grid-template-columns: 10% 90%;
+        grid-template-rows: 12% 1fr;
+    }
+
+    h1 {
+        grid-column: 1/-1;
+        margin: 1rem;
+        text-align: center;
+    }
+
+    header menu{
+        position: relative;
+        flex-direction: column;
+        background-color: var(--white);
+        width: 100%;
+        border: 2px solid var(--orange-red);
+        justify-content: flex-start;
+        gap: 20px;
+        padding-top: 40px;
+        margin-bottom: 10px;
+    }
+
+    header img{
+        width: 98%;
+    }
+
+    .taco-description{
+        display: grid;
+        grid-template-columns: 45% 55%;
+        grid-template-rows: auto auto;
+    }
+
+    .taco-description figure{
+        grid-column: 1/2;
+        grid-row: 1/-1;  
+    }
+
+    .taco-text p{
+        margin-left: 0;
+    }
+
+    .details{
+        background-color: var(--black);
+        color: var(--teal);
+    }
+
+    .details dl{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    main h2{
+        margin: 0 0 1rem 0;
+    }
+
+    .details .detail-info{
+        flex-direction: column;
+        align-items: center;
+        gap:0;
+    }
+
+    .ingredients{
+        width:25%;
+    }
+
+    aside{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: .25fr 1fr;
+        height: 490px;
+    }
+
+    .dishes{
+        display: flex;
+        flex-direction: column;
+        margin-left: 1.75rem;
+        margin-right: -20px;
+        height: 400px;
+        background: transparent;
+        transition: all .5s ease-out;
+    }
+
+    .dishes figure{
+        order: -1;
+        width: 90%;
+    }
+    .dishes h3, .dishes p{
+        padding-top: .1rem;
+        margin-left: 1rem ;
+        max-width: 75%;
+    }
+
+    footer section:nth-of-type(2) {
+        display: grid;
+        grid-template-columns: .5fr 1fr;
+        grid-template-rows: .10fr 1fr;
+        align-items: center;
+    }
+
+    footer img{
+        grid-column: 1/2;
+        grid-row: 1/-1;
+        width: 90%;
+        margin-left: 1rem;
+    }
+
+    footer small{
+        grid-column: 2/3 ;
+        grid-row: 1/2;
+        padding: 1rem .5rem 0;
+    }
+
+    footer p{
+        grid-column:2/3 ;
+        grid-row: 2/3;
+        align-self: start;
+    }
+
+    /* hover for nav menu-items img a */
+    nav li a:hover{
+        background-color: var(--orange-red);
+        color: white;
+        padding-bottom: 13px;
+    }
+
+    #sign-in:hover{
+        background-color: var(--orange-red);
+        right: 0px;
+        top: 0px;
+        padding: 30px 30px 57px 25px;
+    }
+
+    nav #logo:hover{
+        padding-bottom: 20px;
+    }
+
+    /* header menu hover styling */
+    header menu li a:hover{
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 56%, var(--orange-red) 20%);
+        color: var(--white);
+    }
+
+    header menu li a:hover svg{
+        background-color: transparent;
+        width: 100%; 
+    }
+
+    .dishes:hover{
+        background: linear-gradient(to right, rgb(255, 179, 3) 81%, transparent 20%);
+        transition: all .5s ease-out;
+    }
+
+}
